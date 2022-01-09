@@ -28,21 +28,20 @@ def getCurrSys():
     return currSys
 
 def locate(image):
-    #print("locate_and_click", image)
+    #print("locate", image)
+    sleep(2)
     set1 = pyautogui.locateOnScreen(image,confidence=0.75)
     if set1 == None:
         print("X", end='')
         #print("\nNie można zlokalizować przycisku", image)
-        pass
+        return False
     else:
         print("O", end='')
-        x = set1.left+set1.width//2
-        y = set1.top+set1.height//2
-        pyautogui.moveTo(x,y,1)
-        pyautogui.click()
+        return True
     
 def locate_and_click(image):
     #print("locate_and_click", image)
+    sleep(2)
     set1 = pyautogui.locateOnScreen(image,confidence=0.75)
     if set1 == None:
         print("X", end='')
@@ -116,9 +115,24 @@ def oneJump(sysName):
     locate_and_click('przycisk.png')
     press_and_release('space', 0.3, 2)
 
+    sleep(3)
+    if locate("no_route_set.png"):
+        sleep(10)
+        locate_and_click('exit.png')
+        locate_and_click('navigation.png')
+        press_and_release('space', 0.2, 3)
+        locate_and_click('lupka.png')
+        press_and_release('space', 0.3, 2)
+        kb.write(sysName)
+        locate_and_click('szukaj.png')
+        press_and_release('enter', 0.3, 2) 
+        sleep(5)
+        locate_and_click('przycisk.png')
+        press_and_release('space', 0.3, 2)
+        
 # przerwa
     print(" PRZERWA 20 MINUT", end='')
-    sleep(1205)
+    sleep(1220)
     print(" KONIEC SKOKU")
     pass
 
@@ -135,6 +149,7 @@ input("...nacisnij enter aby wystarować.")
 currSys = getCurrSys()
 print("\nAktualny system:", currSys)
 
+# zlicza systemy na liście i sprawdza prawidłową pozycję FC
 nSys = 0
 checkSys = 0
 for line in sysFile.readlines():
@@ -145,6 +160,24 @@ if (checkSys == 0):
     print("Ustaw lotniskowiec w dowolnym systemie z listy nawigacyjnej!")
     sys.exit()
 print("Lista nawigacyjna (liczba systemów):", nSys)
+
+# system docelowy
+##startSys = 0
+##sysFile.seek(0)
+##for line in sysFile.readlines():
+##    startSys = startSys + 1
+##    line = line[0:-1]
+##    if (line == currSys):
+##        print("System docelowy (następny):", line)
+##        exit
+
+# szuka system końcowy
+i = 0
+sysFile.seek(0)
+for line in sysFile.readlines():
+    i = i +1
+    if (i == nSys): lastSys = line
+print("System końcowy:", lastSys)
 
 # ustawienie znacznika na następnym po bieżącym systemie z listy
 startSys = 0
