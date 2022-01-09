@@ -7,6 +7,14 @@ import threading
 import pyautogui
 import sys
 
+##import pydirectinput
+##import requests
+##import argparse,csv
+##import json
+##from playsound import playsound
+##import tkinter as tk
+##import ctypes
+
 sysFile = open("lista_nawigacyjna.txt","r")
 
 def getCurrSys():
@@ -19,12 +27,28 @@ def getCurrSys():
     currSys = currSys.split('"StarSystem":"')[1].split('"')[0]
     return currSys
 
+def locate(image):
+    #print("locate_and_click", image)
+    set1 = pyautogui.locateOnScreen(image,confidence=0.75)
+    if set1 == None:
+        print("X", end='')
+        #print("\nNie można zlokalizować przycisku", image)
+        pass
+    else:
+        print("O", end='')
+        x = set1.left+set1.width//2
+        y = set1.top+set1.height//2
+        pyautogui.moveTo(x,y,1)
+        pyautogui.click()
+    
 def locate_and_click(image):
     #print("locate_and_click", image)
     set1 = pyautogui.locateOnScreen(image,confidence=0.75)
     if set1 == None:
-        print("\nNie można zlokalizować przycisku", image)
+        print("X", end='')
+        #print("\nNie można zlokalizować przycisku", image)
     else:
+        print("O", end='')
         x = set1.left+set1.width//2
         y = set1.top+set1.height//2
         pyautogui.moveTo(x,y,1)
@@ -37,7 +61,6 @@ def press_and_release(key, press_wait, release_wait):
     sleep(press_wait)
     kb.release(key)
     sleep(release_wait)
-    pass
 
 def oneJump(sysName):
 # aktywacja i przejście do CARRIER SERVICES
@@ -88,10 +111,13 @@ def oneJump(sysName):
     press_and_release('space', 0.3, 2)
     kb.write(sysName)
     locate_and_click('szukaj.png')
-    press_and_release('enter', 0.3, 2)
-    sleep(3)
+    press_and_release('enter', 0.3, 2) 
+    sleep(5)
     locate_and_click('przycisk.png')
-    press_and_release('enter', 0.3, 2)
+    press_and_release('space', 0.3, 2)
+
+# przerwa
+    print(" PRZERWA 20 MINUT", end='')
     sleep(1205)
     print(" KONIEC SKOKU")
     pass
