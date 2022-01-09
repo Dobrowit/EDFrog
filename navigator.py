@@ -19,13 +19,8 @@ def getCurrSys():
     currSys = currSys.split('"StarSystem":"')[1].split('"')[0]
     return currSys
 
-def getCoords(image):
-    set1 = pyautogui.locateOnScreen(image,confidence=0.75)
-    if set1 == None: return None
-    else: return set1.left+set1.width//2,set1.top+set1.height//2
-
 def locate_and_click(image):
-    print("locate_and_click", image)
+    #print("locate_and_click", image)
     #x,y = getCoords(image)
     set1 = pyautogui.locateOnScreen(image,confidence=0.75)
     if set1 == None:
@@ -69,9 +64,10 @@ def oneJump(sysName):
     press_and_release('w', 0.2, 0.5)
     press_and_release('d', 0.2, 0.5)
     press_and_release('space', 0.2, 1)
-    towary = 2 # pozycja TRITIUM w SHIP CARGO (licząc od dołu)
-    for i in range(towary):
-        press_and_release('w', 0.2, 0.5)
+    #towary = 2 # pozycja TRITIUM w SHIP CARGO (licząc od dołu)
+    #for i in range(towary):
+    #    press_and_release('w', 0.2, 0.5)
+    press_and_release('w', 5, 0.5)
     press_and_release('a', 8, 0.5)
     press_and_release('space', 0.2, 1)
     press_and_release('space', 0.2, 1)
@@ -97,6 +93,7 @@ def oneJump(sysName):
     locate_and_click('szukaj.png')
     press_and_release('enter', 0.3, 2)
     locate_and_click('przycisk.png')
+    press_and_release('enter', 0.3, 2)
     sleep(1205)
     print(" KONIEC SKOKU")
     pass
