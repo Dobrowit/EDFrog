@@ -21,10 +21,9 @@ def getCurrSys():
 
 def locate_and_click(image):
     #print("locate_and_click", image)
-    #x,y = getCoords(image)
     set1 = pyautogui.locateOnScreen(image,confidence=0.75)
     if set1 == None:
-        print("Nie można zlokalizować przycisku...")
+        print("\nNie można zlokalizować przycisku", image)
     else:
         x = set1.left+set1.width//2
         y = set1.top+set1.height//2
@@ -41,7 +40,6 @@ def press_and_release(key, press_wait, release_wait):
     pass
 
 def oneJump(sysName):
-    #print("NASTĘPNY SKOK DO ", sysName)
 # aktywacja i przejście do CARRIER SERVICES
     press_and_release('1', 0.2, 1)
     press_and_release('1', 0.2, 1)
@@ -50,7 +48,7 @@ def oneJump(sysName):
     press_and_release('s', 0.2, 0.5)
 
 # tankowanie (DONATE)
-    press_and_release('space', 0.2, 2)
+    press_and_release('space', 0.2, 1)
     press_and_release('space', 0.2, 1)
     press_and_release('w', 0.2, 0.5)
     press_and_release('space', 0.2, 1)
@@ -67,7 +65,7 @@ def oneJump(sysName):
     #towary = 2 # pozycja TRITIUM w SHIP CARGO (licząc od dołu)
     #for i in range(towary):
     #    press_and_release('w', 0.2, 0.5)
-    press_and_release('w', 5, 0.5)
+    press_and_release('w', 5, 0.5) # lepsze rozwiązanie ale 5x dłużej się wykonuje
     press_and_release('a', 8, 0.5)
     press_and_release('space', 0.2, 1)
     press_and_release('space', 0.2, 1)
@@ -83,15 +81,15 @@ def oneJump(sysName):
     
 # wprowadzenie docelowego systemu i zatwierdzenie trasy
 #
-# uwaga to miejsce w sekwencji jest problematyczne
-# mapa ED czasami zachowuje się nieprzewidywalnie
-# czasami nie pokazuje się 'przycisk.png'
+# uwaga to miejsce w sekwencji jest problematyczne;
+# mapa ED czasami zachowuje się nieprzewidywalnie;
 #
     locate_and_click('lupka.png')
     press_and_release('space', 0.3, 2)
     kb.write(sysName)
     locate_and_click('szukaj.png')
     press_and_release('enter', 0.3, 2)
+    sleep(3)
     locate_and_click('przycisk.png')
     press_and_release('enter', 0.3, 2)
     sleep(1205)
@@ -100,12 +98,12 @@ def oneJump(sysName):
 
 print("Colonie Express - autopilot do Elite Dangerous: Odyssey\n")
 print("Lista startowa:")
-print("(1) - Dla wygody ustaw ED na wyświetlanie w oknie i przesuń je tak abyś widział tą konsole.")
-print("(2) - Okno ED nie może wychodzić poza krawędź ekranu i musi być na pierwszym planie.")
-print("(3) - Prawy panel musi być ustawiony na zakładce INVENTORY - SHIP CARGO.")
-print("(4) - SHIP CARGO musi być napełnione do pełna TRITIUM (minimum 132 tony).")
-print("(5) - Lotniskowiec musi znajdować się w dowolnym systemie z listy.")
-print("(6) - Autopilot wykonuje skok do systemu następującego po bieżącym systemie z listy.")
+print("(1) - Dla wygody ustaw ED na wyświetlanie w oknie\n      i przesuń je tak abyś widział tą konsole.")
+print("(2) - Okno ED nie może wychodzić poza krawędź ekranu\n      i musi być na pierwszym planie.")
+print("(3) - Prawy panel musi być ustawiony na zakładce\n      INVENTORY - SHIP CARGO.")
+print("(4) - SHIP CARGO musi być napełnione do pełna\n      TRITIUM (minimum 132 tony).")
+print("(5) - Lotniskowiec musi znajdować się\n      w dowolnym systemie z listy.")
+print("(6) - Autopilot wykonuje skok do systemu następującego\n      po bieżącym systemie z listy.")
 input("...nacisnij enter aby wystarować.")
       
 currSys = getCurrSys()
