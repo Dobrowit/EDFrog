@@ -1,6 +1,6 @@
-# ColoniaExpress
+# EDFrog
 
-Colonie Express - to autopilot lotniskowca do Elite Dangerous: Odyssey.
+EDFrog (dawniej Colonie Express) - to autopilot lotniskowca do Elite Dangerous: Odyssey.
 
 Przetestowano z następującymi wersjami EDO:
 - 4.0.0.10002
