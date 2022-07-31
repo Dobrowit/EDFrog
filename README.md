@@ -20,12 +20,12 @@ Uruchamiać następująco:
 
 Po rozpakowaniu zainstalować maduły poleceniem (oczywiście wcześniej zainstalować Pythona):
 
-pip install -r requirements.txt
+  pip install -r requirements.txt
 
 Uruchamiać z pliku navigator.py
 
-python navigator.py
+  python navigator.py
 
 lub wersję z wyciętymi funkcjami rozpoznawania obrazu (OpenCV):
 
-python ed_frog.py
+  python ed_frog.py
