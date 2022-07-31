@@ -1,1 +1,0 @@
-pyinstaller --noconfirm --onedir --console --icon "C:/PYTHON/projects/ED_Frog/icon.ico" --name "ED Frog" --clean --log-level "CRITICAL" --key "uWOrWfhuG0iiIgv9oDEl" --add-data "C:/PYTHON/projects/ED_Frog/edtools.py;." --add-data "C:/PYTHON/projects/ED_Frog/lista_nawigacyjna.txt;." --add-data "C:/PYTHON/projects/ED_Frog/img;img/"  "C:/PYTHON/projects/ED_Frog/navigator.py"
