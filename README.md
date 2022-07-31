@@ -16,4 +16,4 @@ Lista startowa:
 - SHIP CARGO musi być napełnione do pełna tylko TRITIUM (minimum 132 tony).
 - Lotniskowiec musi znajdować się w dowolnym systemie z listy.
 
-Paczka instalacyjna - https://drive.google.com/file/d/10jNSV8vYL3W3nHeW_ILtvSsgHMxfcVpv/view?usp=sharing
+Paczka instalacyjna - https://drive.google.com/file/d/1tP8l2jVgGwAXsZG4oVnmk_pwyKh8iMv2/view?usp=sharing
