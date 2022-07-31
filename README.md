@@ -15,5 +15,3 @@ Lista startowa:
 - Prawy panel musi być ustawiony na zakładce INVENTORY - SHIP CARGO.
 - SHIP CARGO musi być napełnione do pełna tylko TRITIUM (minimum 132 tony).
 - Lotniskowiec musi znajdować się w dowolnym systemie z listy.
-
-Paczka instalacyjna - https://drive.google.com/file/d/1tP8l2jVgGwAXsZG4oVnmk_pwyKh8iMv2/view?usp=sharing
