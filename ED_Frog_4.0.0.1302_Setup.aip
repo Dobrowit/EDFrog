@@ -4,9 +4,9 @@ AIEdition=1
 GUID={9C119861-F4F5-4FFB-A1D9-B513D59431D3}
 AppName=ED Frog
 AppVersion=4.0.0.1302
-AppDescription=
+AppDescription=Fleet Carrier autopilot for Elite Dangerous Odyssey
 CompanyName=
-WebSite=
+WebSite=https://github.com/morgor/EDFrog
 SupportLink=
 InstallLevel=0
 UpgradeMode=0
@@ -142,8 +142,8 @@ CustomActionCommand=<WebSite>
 CustomActionChecked=0
 CustomActionAdmin=0
 TotalFiles=1
-SourceDirFiles=1035
-SourceDirSize=95051917
+SourceDirFiles=1043
+SourceDirSize=102854056
 
 [GUI]
 FontName=Verdana
