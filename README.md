@@ -15,3 +15,17 @@ Lista startowa:
 - Prawy panel musi być ustawiony na zakładce INVENTORY - SHIP CARGO.
 - SHIP CARGO musi być napełnione do pełna tylko TRITIUM (minimum 132 tony).
 - Lotniskowiec musi znajdować się w dowolnym systemie z listy.
+
+Uruchamiać następująco:
+
+Po rozpakowaniu zainstalować maduły poleceniem (oczywiście wcześniej zainstalować Pythona):
+
+pip install -r requirements.txt
+
+Uruchamiać z pliku navigator.py
+
+python navigator.py
+
+lub wersję z wyciętymi funkcjami rozpoznawania obrazu (OpenCV):
+
+python ed_frog.py
